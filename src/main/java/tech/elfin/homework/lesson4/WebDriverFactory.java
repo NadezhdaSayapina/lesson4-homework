@@ -11,19 +11,20 @@ public class WebDriverFactory {
         IE,
         FIREFOX}
 
-    public static WebDriver create (Browsers brouser, String... options) {
-         if (brouser == Browsers.CHROME){
+
+    public static WebDriver create (String webDriverName) {
+         if (webDriverName.toUpperCase().equals(Browsers.CHROME.toString())){
              System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
              return new ChromeDriver();
          }
-         if (brouser == Browsers.IE) {
+         if (webDriverName.toUpperCase().equals(Browsers.IE.toString())) {
              System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
              return new InternetExplorerDriver();
          }
-         if (brouser == Browsers.FIREFOX) {
+         if (webDriverName.toUpperCase().equals(Browsers.FIREFOX.toString())) {
              System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
              return new FirefoxDriver();
          }
          return null;
     }
-}
+   }

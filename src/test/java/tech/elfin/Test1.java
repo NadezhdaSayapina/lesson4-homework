@@ -14,7 +14,7 @@ public class Test1 {
 
     @Test
     public void newtest (){
-        WebDriver driver = WebDriverFactory.create(WebDriverFactory.Browsers.CHROME);
+        WebDriver driver = WebDriverFactory.create("CHROME");
         driver.get("https://otus.ru/");
         driver.quit();
         logger.info("Chrome Успех");
